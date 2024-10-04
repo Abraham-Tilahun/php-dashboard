@@ -18,10 +18,11 @@
         </div>
         <div class="header-middle">
             <p>Welcome, User!</p>
+            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-sun"></i></button>
         </div>
         <div class="header-right">
             <div class="dropdown">
-                <button class="dropdown-toggle"></button>
+                <button class="dropdown-toggle"><img src='./logo.png'/></button>
                 <div class="dropdown-content">
                     <a href="#">Edit Profile</a>
                     <a href="#">Settings</a>

@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text colors */
 }
 
 .header {
@@ -19,6 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s; /* Smooth transition for header background */
 }
 
 .header-left, .header-middle, .header-right {
@@ -42,18 +44,17 @@ body {
 }
 
 .header-left img.logo {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
 }
 
-.header-left h3 {
-    margin-right: auto;
+.header-left h4 {
     font-size: 15px;
 }
 
 .header-middle p {
-    font-size: 18px;
+    font-size: 15px;
     margin: 0;
 }
 
@@ -65,9 +66,14 @@ body {
 .header-right .dropdown-toggle {
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
     border: none;
     cursor: pointer;
+}
+
+.header-right .dropdown-toggle img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
 }
 
 .header-right .dropdown-content {
@@ -101,13 +107,15 @@ body {
     border: none;
     padding: 10px;
     cursor: pointer;
-    margin-left:40px;
+    margin-left: 60px;
+    font-size: 15px;
 }
 
 .container {
     display: flex;
     flex-grow: 1;
 }
+
 .sidebar ul {
     list-style: none;
     padding: 0;
@@ -125,6 +133,7 @@ body {
     display: flex;
     align-items: center;
     padding: 5px 10px 1px 10px;
+    font-size: 13px;
 }
 
 .sidebar ul li a i {
@@ -192,6 +201,9 @@ body {
 }
 
 @media (max-width: 480px) {
+    .header-left h4 {
+        display: none;
+    }
     .header {
         flex-direction: column;
     }
@@ -208,5 +220,54 @@ body {
 
     .sidebar.collapsed {
         width: 40px;
+    }
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #f4f4f4; /* Light text color */
+}
+
+.header.dark-theme {
+    background-color: #333; /* Dark header background */
+}
+
+.footer.dark-theme {
+    background-color: #333; /* Dark footer background */
+    color: #f4f4f4; /* Light text color */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333; /* Dark background for the footer */
+    color: white; /* White text for contrast */
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center the text */
+    position: relative; /* Ensure it stays within the layout */
+    bottom: 0; /* Stick it to the bottom */
+    width: 100%; /* Full width */
+    border-top: 2px solid #444; /* Optional: border for separation */
+}
+
+.footer a {
+    color: #f1f1f1; /* Light color for links */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Margin between links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.footer a:hover {
+    color: #ffffff; /* Change link color on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    .footer a {
+        margin: 0 5px; /* Reduced margin for smaller screens */
     }
 }
